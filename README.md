@@ -18,8 +18,6 @@ The notebook covers the full segmentation pipeline:
 - Quantitative evaluation with confusion matrices
 - Qualitative visualization of predictions versus ground truth masks
 
-All training logic is implemented with a custom training loop rather than `model.fit`, making the optimization and metric computation fully explicit.
-
 ## Dataset
 
 The project uses the DeepGlobe land cover classification dataset. Each sample consists of:
