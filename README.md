@@ -29,7 +29,7 @@ The project uses the DeepGlobe land cover classification dataset. Each sample co
 
 Masks are converted into a single channel label map with **7 classes** (6 classes + an Unknown class), where each pixel stores an integer class ID.
 
-Images are resized from their original resolution to `512 x 512` to fit memory constraints during training.
+Images are resized from their original resolution to `1224 x 1224` to fit memory constraints during training.
 
 ## Model
 
@@ -46,7 +46,7 @@ The architecture depth, number of filters, and dropout rate are configurable in 
 
 - Loss function: multi class Dice loss
 - Optimizer: AdamW with exponential learning rate decay
-- Metrics: weighted F1 score and intersection over union
+- Metrics: weighted F1 score and intersection over union (IoU)
 - Batch size and number of epochs are defined in the notebook
 - The best model is saved automatically based on validation loss
 
@@ -61,6 +61,10 @@ After training, the notebook:
 - Displays side by side comparisons of input images, predicted masks, and ground truth masks
 - Computes and visualizes confusion matrices
 - Reports F1 scores for qualitative inspection
+
+An example of segmentation of a validation image, showing how the fields are separated across a road, can be seen below:
+
+![Agriculture Land Segmentation Example](./images/output_example.png)
 
 ## Notes
 
